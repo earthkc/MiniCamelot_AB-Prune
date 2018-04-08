@@ -4,8 +4,6 @@
 //  Mini Camelot
 //
 //
-//need to public/private the classes
-//stop using 'using namespace'
 
 #include <iostream>
 #include <string>
@@ -245,18 +243,21 @@ int main(int argc, const char * argv[]) {
     cout << "\nHuman Player is White 'W'. Computer is Black 'B' \n";
     cout << "'_' are empty spaces. '+' are castles. \n";
     cout << "White's castles are at the top. Black's castles are at the bottom. \n\n";
-    cout << "To win, occupy both of the opponent's castles with your own pieces,\n";
-    cout << "or capture all of the opponent's pieces while retaining two or more\n";
-    cout << "of your own pieces.\n\n";
-    cout << "RULES\nPieces can move horizontally, vertically or diagonally in three ways.\n";
+    
+    cout << "Pieces can move horizontally, vertically or diagonally in one of three ways.\n";
     cout << "1. Plain move: move into an empty adjacent square in any direction.\n";
-    cout << "2. Cantering move: one leaping move over your own piece to an empty square \n";
-    cout << "immediately beyond. Multiple successive leaps over your own pieces are not \n";
-    cout << "allowed. Cantering moves are optional and not obligatory.\n";
-    cout << "3. Capturing move: jump over an adjacent enemy piece to an empty square\n";
-    cout << "immediately beyond. The enemy piece is captured and removed from the board.\n";
-    cout << "Multiple successive jumping moves are not allowed. Capturing moves are\n";
-    cout << "obligatory whenever they are possible.\n\n";
+    cout << "2. Cantering move: leaping move over one of your own adjacent piece to an empty space \n";
+    cout << "immediately beyond. \n";
+    cout << "3. Capturing move: jump over an adjacent enemy piece to an empty space\n";
+    cout << "immediately beyond. The enemy piece is removed from the board.\n";
+    cout << "Capturing moves must be taken whenever they are possible.\n\n";
+    
+    std::cout << "Two ways to win:\n";
+    std::cout << "1. Occupy the opponent's two castles with your own pieces.\n";
+    std::cout << "2. Capture all of the enemy's pieces while retaining at least of your own pieces.\n";
+    std::cout << "NOTE: A draw occurs if both players have only one piece left.\n\n";
+    
+    
     
     //Turn Setting
     cout << "Choose whether to move first or second.\n";
@@ -285,7 +286,6 @@ int main(int argc, const char * argv[]) {
          int a; // player's chosen move
          int b; // player's chosen move
         
-        //perhaps x,y,a,b is not needed here
         if (Human.turn == true){ // Human goes first
             playerMoveValidity(board, x, y, a, b, Human, Computer); // player move function
             board.printBoard();
@@ -294,6 +294,7 @@ int main(int argc, const char * argv[]) {
                 gameEnd = true;
             }
             else{ // begin computer move
+                std::cout << "Thinking... \n";
                 computerMove(board, Human, Computer); // computer function
                 std::cout << endl;
                 if (winCondition(board, Human, Computer) == true){ // test win conditions
@@ -303,7 +304,7 @@ int main(int argc, const char * argv[]) {
             }
         }
         else{ // Computer goes first
-            
+            std::cout << "Thinking... \n";
             computerMove(board, Human, Computer); // computer function
             board.printBoard();
             std::cout << endl;

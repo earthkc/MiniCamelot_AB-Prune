@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F23B87DC207AAADE0042AE15 /* BoardClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87CE207AAADB0042AE15 /* BoardClass.cpp */; };
+		F23B87DD207AAADE0042AE15 /* winCon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87D0207AAADC0042AE15 /* winCon.cpp */; };
+		F23B87DE207AAADE0042AE15 /* compAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87D3207AAADC0042AE15 /* compAction.cpp */; };
+		F23B87DF207AAADE0042AE15 /* moveValid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87D4207AAADC0042AE15 /* moveValid.cpp */; };
+		F23B87E0207AAADE0042AE15 /* PlayerClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87D7207AAADD0042AE15 /* PlayerClass.cpp */; };
+		F23B87E1207AAADE0042AE15 /* commitMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87D8207AAADD0042AE15 /* commitMove.cpp */; };
+		F23B87E2207AAADE0042AE15 /* precaptureCheck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23B87D9207AAADD0042AE15 /* precaptureCheck.cpp */; };
 		F27E272B207AA97200180EEC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F27E272A207AA97200180EEC /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +30,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F23B87CE207AAADB0042AE15 /* BoardClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardClass.cpp; sourceTree = "<group>"; };
+		F23B87CF207AAADB0042AE15 /* winCon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = winCon.hpp; sourceTree = "<group>"; };
+		F23B87D0207AAADC0042AE15 /* winCon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = winCon.cpp; sourceTree = "<group>"; };
+		F23B87D1207AAADC0042AE15 /* BoardClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoardClass.hpp; sourceTree = "<group>"; };
+		F23B87D2207AAADC0042AE15 /* moveValid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = moveValid.hpp; sourceTree = "<group>"; };
+		F23B87D3207AAADC0042AE15 /* compAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = compAction.cpp; sourceTree = "<group>"; };
+		F23B87D4207AAADC0042AE15 /* moveValid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = moveValid.cpp; sourceTree = "<group>"; };
+		F23B87D5207AAADC0042AE15 /* commitMove.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = commitMove.hpp; sourceTree = "<group>"; };
+		F23B87D6207AAADD0042AE15 /* precaptureCheck.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = precaptureCheck.hpp; sourceTree = "<group>"; };
+		F23B87D7207AAADD0042AE15 /* PlayerClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerClass.cpp; sourceTree = "<group>"; };
+		F23B87D8207AAADD0042AE15 /* commitMove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = commitMove.cpp; sourceTree = "<group>"; };
+		F23B87D9207AAADD0042AE15 /* precaptureCheck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = precaptureCheck.cpp; sourceTree = "<group>"; };
+		F23B87DA207AAADE0042AE15 /* compAction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = compAction.hpp; sourceTree = "<group>"; };
+		F23B87DB207AAADE0042AE15 /* PlayerClass.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayerClass.hpp; sourceTree = "<group>"; };
 		F27E2727207AA97200180EEC /* MiniCamelot_AB-Prune */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "MiniCamelot_AB-Prune"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27E272A207AA97200180EEC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +78,20 @@
 		F27E2729207AA97200180EEC /* MiniCamelot_AB-Prune */ = {
 			isa = PBXGroup;
 			children = (
+				F23B87CE207AAADB0042AE15 /* BoardClass.cpp */,
+				F23B87D1207AAADC0042AE15 /* BoardClass.hpp */,
+				F23B87D8207AAADD0042AE15 /* commitMove.cpp */,
+				F23B87D5207AAADC0042AE15 /* commitMove.hpp */,
+				F23B87D3207AAADC0042AE15 /* compAction.cpp */,
+				F23B87DA207AAADE0042AE15 /* compAction.hpp */,
+				F23B87D4207AAADC0042AE15 /* moveValid.cpp */,
+				F23B87D2207AAADC0042AE15 /* moveValid.hpp */,
+				F23B87D7207AAADD0042AE15 /* PlayerClass.cpp */,
+				F23B87DB207AAADE0042AE15 /* PlayerClass.hpp */,
+				F23B87D9207AAADD0042AE15 /* precaptureCheck.cpp */,
+				F23B87D6207AAADD0042AE15 /* precaptureCheck.hpp */,
+				F23B87D0207AAADC0042AE15 /* winCon.cpp */,
+				F23B87CF207AAADB0042AE15 /* winCon.hpp */,
 				F27E272A207AA97200180EEC /* main.cpp */,
 			);
 			path = "MiniCamelot_AB-Prune";
@@ -118,7 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F23B87DE207AAADE0042AE15 /* compAction.cpp in Sources */,
+				F23B87DF207AAADE0042AE15 /* moveValid.cpp in Sources */,
+				F23B87DD207AAADE0042AE15 /* winCon.cpp in Sources */,
+				F23B87E1207AAADE0042AE15 /* commitMove.cpp in Sources */,
+				F23B87E0207AAADE0042AE15 /* PlayerClass.cpp in Sources */,
+				F23B87E2207AAADE0042AE15 /* precaptureCheck.cpp in Sources */,
 				F27E272B207AA97200180EEC /* main.cpp in Sources */,
+				F23B87DC207AAADE0042AE15 /* BoardClass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

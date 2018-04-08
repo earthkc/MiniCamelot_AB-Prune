@@ -35,11 +35,11 @@ bool castleWinCon(Board& board){
 
 //check pieces remaining win condition
 bool zeroPieceWinCon(Player& human, Player& computer){
-    if ((human.pieces >= 2) && (computer.pieces <= 1)){
+    if ((human.pieces >= 2) && (computer.pieces <= 0)){
         cout << "PLAYER WHITE WINS\n";
         return true;
     }
-    if ((computer.pieces >=2) && (human.pieces <= 1)){
+    if ((computer.pieces >=2) && (human.pieces <= 0)){
         cout << "PLAYER BLACK WINS\n";
         return true;
     }

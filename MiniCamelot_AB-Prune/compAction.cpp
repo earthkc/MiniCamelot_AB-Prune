@@ -122,10 +122,10 @@ void ABnode::newChild(ABnode& child, int x, int y, int a, int b){
     child.prev = this;
     
     /*
-    //copy over the pruned branches to prevent duplication
-    for (int i; i < pruned.size(); i++){
-        child.pruned.push_back(pruned[i]);
-    }
+     //copy over the pruned branches to prevent duplication
+     for (int i; i < pruned.size(); i++){
+     child.pruned.push_back(pruned[i]);
+     }
      */
     
     //copy over Player classes. copy constructor
@@ -786,34 +786,46 @@ int terminalState(Board& board, Player& human, Player& computer){
 //evaluation function
 int ABeval(ABnode &node){
     int evaluation = 0;
-    const int pieceValue = 100;
+    const int pieceValue = 200; //50
+    const int castleValue = 50; //200
+    const int captureRisk = 100; //300
     
     if (node.isMax == true){
         if (node.currstate.state[13][3] == 'W')
-            evaluation = evaluation - 350;
+            evaluation = evaluation - castleValue;
         if (node.currstate.state[13][4] == 'W')
-            evaluation = evaluation - 350;
+            evaluation = evaluation - castleValue;
         if (node.currstate.state[0][3] == 'B')
-            evaluation = evaluation + 350;
+            evaluation = evaluation + castleValue;
         if (node.currstate.state[0][4] == 'B')
-            evaluation = evaluation + 350;
-    
+            evaluation = evaluation + castleValue;
+        
         evaluation = evaluation - (node.human.pieces * pieceValue);
         evaluation = evaluation + (node.comp.pieces * pieceValue);
+        
+        if (capturingCheck(node.currstate, node.human) == true){
+            evaluation = evaluation - captureRisk;
+        }
+        
         return evaluation;
     }
     else{
         if (node.currstate.state[13][3] == 'W')
-            evaluation = evaluation + 350;
+            evaluation = evaluation + castleValue;
         if (node.currstate.state[13][4] == 'W')
-            evaluation = evaluation + 350;
+            evaluation = evaluation + castleValue;
         if (node.currstate.state[0][3] == 'B')
-            evaluation = evaluation - 350;
+            evaluation = evaluation - castleValue;
         if (node.currstate.state[0][4] == 'B')
-            evaluation = evaluation - 350;
+            evaluation = evaluation - castleValue;
         
         evaluation = evaluation + (node.human.pieces * pieceValue);
         evaluation = evaluation - (node.comp.pieces * pieceValue);
+        
+        if (capturingCheck(node.currstate, node.comp) == true){
+            evaluation = evaluation - captureRisk;
+        }
+        
         return evaluation;
     }
     
@@ -833,7 +845,7 @@ bool ABcutOff(clock_t& timer){
 
 //cutoff depth based
 bool ABcutOffDepth(int &depth){
-    const int depth_limit = 50; //depth limit
+    const int depth_limit = 8; //depth limit
     if (depth >= depth_limit)
         return true;
     else
@@ -980,10 +992,10 @@ void ALPHAbetaSEARCH(ABnode &root, int &x, int&y, int&a, int&b){
     int pruned_min = 0; //number of times pruning occured in minvalue function
     
     /*
-    //vector to store leaf nodes
-    vector<ABnode*> leaf;
-    //vector of utility values. used as iterator to reference leaf nodes
-    vector<int> leafUtility;
+     //vector to store leaf nodes
+     vector<ABnode*> leaf;
+     //vector of utility values. used as iterator to reference leaf nodes
+     vector<int> leafUtility;
      */
     
     //timer
